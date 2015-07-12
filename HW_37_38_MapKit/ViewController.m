@@ -30,9 +30,10 @@
     [self showUserLocation:self.mapView andLocationManager:self.locationManager];
 
 
-    ASNameFamalyAndImage* obj = [[ASNameFamalyAndImage alloc]init];
+    ASNameFamalyAndImage* obj = [[ASNameFamalyAndImage alloc] init];
+
     
-    for (int i=0; i<=100; i++) {
+    for (int i=0; i<=10; i++) {
         NSString* name   = [obj.arrayNames objectAtIndex:   arc4random()%[obj.arrayNames count]];
         NSString* famaly = [obj.arrayFamaly objectAtIndex:  arc4random()%[obj.arrayFamaly count]];
         
@@ -46,6 +47,7 @@
                                                   target:self action:@selector(actionShowAll:)];
 
     self.navigationItem.rightBarButtonItem = zoomButton;
+    [self actionShowAll:nil];
 }
 
 
@@ -68,30 +70,68 @@
     MKPinAnnotationView* pin = (MKPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
     
     if (!pin) {
+       
         pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
-        pin.pinColor = MKPinAnnotationColorPurple;
-        pin.animatesDrop = YES;
+        
+        __weak ASStudent *weakSelf = annotation;
+        
+        if ([weakSelf isKindOfClass:[ASStudent class]] && ![weakSelf.image isEqual:nil]) {
+            pin.image = weakSelf.image;
+       
+        } else {
+        
+            pin.pinColor = MKPinAnnotationColorPurple;
+   
+        }
+        //pin.pinColor = MKPinAnnotationColorPurple;
+        //pin.animatesDrop = YES;
         pin.canShowCallout = YES;
         pin.draggable = YES;
+        [pin setEnabled:YES];
+
+        
+        
     } else {
         pin.annotation = annotation;
     }
+    ///////////
+    
+    
+return pin;
+}
+
+
+
+- (MKAnnotationView *)viewForAnnotation:(id <MKAnnotation>)annotation {
+    
+    static NSString* identifier = @"Annotation";
+    
+    //MKPinAnnotationView* pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
+    //pin.pinColor = MKPinAnnotationColorPurple;
+    //MKAnnotationView* obj = [[MKAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"Annotation"];
+    MKAnnotationView* pin = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
+    pin.image = [UIImage imageNamed:@"newImages/malecostume-64.png"];
+    pin.canShowCallout = YES;
+    pin.draggable = YES;
+    pin.enabled = YES;
     
     return pin;
 }
 
+
+
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view didChangeDragState:(MKAnnotationViewDragState)newState
    fromOldState:(MKAnnotationViewDragState)oldState {
     
-    if (newState == MKAnnotationViewDragStateEnding) {
-        
-        CLLocationCoordinate2D location = view.annotation.coordinate;
-        MKMapPoint point = MKMapPointForCoordinate(location);
-        
-        NSLog(@"\nlocation = {%f, %f}\npoint = %@", location.latitude, location.longitude, MKStringFromMapPoint(point));
-    }
+    //__strong MKAnnotationView *weakAnnotation = view;
+   // MKAnnotationView* tmp  = [self viewForAnnotation:view];
+   // view=tmp;
     
 }
+
+
+
+
 
 
 
@@ -118,10 +158,9 @@
     
     [self.locationManager requestAlwaysAuthorization];
     [self.locationManager startUpdatingLocation];
-    
-    self.location = locations.lastObject;
-    
+     self.location = locations.lastObject;
 }
+
 
 
 - (void) actionShowAll:(UIBarButtonItem*) sender {

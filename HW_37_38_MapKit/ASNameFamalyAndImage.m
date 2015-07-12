@@ -9,22 +9,17 @@
 #import "ASNameFamalyAndImage.h"
 
 @implementation ASNameFamalyAndImage
-- (instancetype)init
+
+- (instancetype) init
 {
     self = [super init];
     if (self) {
         
-        self.arrayImages = @[@"1.jpg",    @"2.jpg",    @"3.jpg",    @"4.jpg",     @"5.jpg",
-                             @"6.jpg",    @"7.jpg",    @"8.jpg",    @"9.png",     @"10.jpg",
-                             @"11.jpg",   @"12.jpg",   @"13.jpg",   @"14.jpg",    @"15.jpg",
-                             @"16.jpg",   @"17.jpg",   @"18.jpg",   @"19.jpg",    @"20.jpg",
-                             @"21.jpeg",  @"22.jpg",   @"23.png",   @"24.png",    @"25.jpg",
-                             @"26.jpg",   @"27.jpg",   @"28.jpg",   @"29.jpg",    @"30.jpg",
-                             @"31.jpg",   @"32.jpg",   @"33.jpg",   @"34.jpg",    @"35.jpg",
-                             @"36.jpg",   @"37.jpg",   @"38.jpg",   @"39.jpg",    @"40.png",
-                             @"41.jpg",   @"42.jpg",   @"43.png",   @"45.png",
-                             @"46.jpg",   @"47.jpg",   @"48.jpg",   @"49.jpg",    @"50.jpg",
-                             @"51.jpg",   @"52.png",   @"53.jpg",   @"54.jpg",    @"55.jpg"];
+        self.arrayImages = @[@"male3-20.png",          @"male3-32.png",          @"male3-48.png",          @"male3-64.png",
+                             @"malecostume-20.png",    @"malecostume-24.png",    @"malecostume-32.png",    @"malecostume-48.png",     @"malecostume-64.png",
+                             @"female1-24.png",        @"female1-32.png",        @"female1-48.png",        @"female1-64.png",
+                             @"Army_officer24.png",    @"Army_officer-32.png",   @"Army_officer-48.png",   @"Army_officer-64.png",
+                             @"Themis24.png",          @"Themis-32.png",         @"Themis-48.png",         @"Themis-64.png"];
         
         self.arrayNames = @[@"Aaron",     @"Abdiel",     @"Abdullah",  @"Abel",       @"Abraham",   @"Abram",
                             @"Adam",      @"Adan",       @"Addison",   @"Aden",       @"Aditya",    @"Adolfo",

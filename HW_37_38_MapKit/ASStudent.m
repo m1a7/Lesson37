@@ -28,43 +28,42 @@
         self.firstname    = name;
         self.lastname     = famaly;
         self.dateOfBirth  = stringOfBirth;
-        self.genderEnum   = (arc4random() % (int) ASFemale);
+        self.genderEnum   = rand()%2;
         
-       
+        
+        if (self.genderEnum == ASMale) {
+            self.image = [UIImage imageNamed:@"newImages/Army_officer-64.png"];
+        }
+        else {
+            self.image = [UIImage imageNamed:@"newImages/Themis-64.png"];
+        }
+        
+        
+        
         // От координат пользователя будем выставлять студентов
         CLLocationCoordinate2D coordinateUser2d = newLocation.coordinate;
         
         double latitudeUser  = coordinateUser2d.latitude;
         double longitudeUser = coordinateUser2d.longitude;
 
-    
         // Координаты студентов
         CLLocationCoordinate2D coordinateStudent2d;
         
-
-        
-       // double  rangeLatitude   =  latitudeUser + ((arc4random()%(toNumber-fromNumber))+fromNumber);
-       // double  rangeLongitude  =  longitudeUser - 2;
-        
-      
-       // double latitudeStudent   =    ((double)arc4random() / ARC4RANDOM_MAX) + rangeLatitude+2;
-       // double longitudeStudent  =    ((double)arc4random() / ARC4RANDOM_MAX) + rangeLongitude+2;
-        
-     
-        double latitudeStudent   =   latitudeUser + [self randomFloatBetween:-0.08 andLargerFloat:0.05];
+        double latitudeStudent   =   latitudeUser  + [self randomFloatBetween:-0.08 andLargerFloat:0.05];
         double longitudeStudent  =   longitudeUser + [self randomFloatBetween:-0.08 andLargerFloat:0.05];
-        
         
         coordinateStudent2d.latitude  = latitudeStudent;
         coordinateStudent2d.longitude = longitudeStudent;
 
         
-      
+        
+        
+        
         self.coordinate = coordinateStudent2d;
-        
-        
         self.title    = [NSString stringWithFormat:@"%@ %@",name,famaly];
         self.subtitle = [NSString stringWithFormat:@"%@",stringOfBirth];
+        
+        
         
         NSLog(@" latitudeStudent = %f   longitudeStudent = %f",latitudeStudent,longitudeStudent);
         //NSLog(@"\tName = %@     \tFamaly = %@     \tDate = %@  |",name,  famaly, string);

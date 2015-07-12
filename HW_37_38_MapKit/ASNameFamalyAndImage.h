@@ -15,5 +15,7 @@
 @property (nonatomic, strong) NSArray* arrayFamaly;
 @property (nonatomic, strong) NSArray* arrayImages;
 
+- (instancetype) init;
+
 
 @end
