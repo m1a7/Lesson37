@@ -14,6 +14,11 @@
 		6C30F4301B51327D004EBC5C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C30F42F1B51327D004EBC5C /* Images.xcassets */; };
 		6C30F4331B51327D004EBC5C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C30F4311B51327D004EBC5C /* LaunchScreen.xib */; };
 		6C30F43F1B51327D004EBC5C /* HW_37_38_MapKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C30F43E1B51327D004EBC5C /* HW_37_38_MapKitTests.m */; };
+		6C30F4491B5132A1004EBC5C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C30F4481B5132A1004EBC5C /* MapKit.framework */; };
+		6C30F44B1B514AAF004EBC5C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C30F44A1B514AAF004EBC5C /* CoreLocation.framework */; };
+		6C30F44D1B5151FE004EBC5C /* images in Resources */ = {isa = PBXBuildFile; fileRef = 6C30F44C1B5151FE004EBC5C /* images */; };
+		6C30F4501B515232004EBC5C /* ASStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C30F44F1B515232004EBC5C /* ASStudent.m */; };
+		6C30F4531B515339004EBC5C /* ASNameFamalyAndImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C30F4521B515339004EBC5C /* ASNameFamalyAndImage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +45,13 @@
 		6C30F4381B51327D004EBC5C /* HW_37_38_MapKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HW_37_38_MapKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C30F43D1B51327D004EBC5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C30F43E1B51327D004EBC5C /* HW_37_38_MapKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HW_37_38_MapKitTests.m; sourceTree = "<group>"; };
+		6C30F4481B5132A1004EBC5C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		6C30F44A1B514AAF004EBC5C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		6C30F44C1B5151FE004EBC5C /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
+		6C30F44E1B515232004EBC5C /* ASStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASStudent.h; sourceTree = "<group>"; };
+		6C30F44F1B515232004EBC5C /* ASStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASStudent.m; sourceTree = "<group>"; };
+		6C30F4511B515339004EBC5C /* ASNameFamalyAndImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASNameFamalyAndImage.h; sourceTree = "<group>"; };
+		6C30F4521B515339004EBC5C /* ASNameFamalyAndImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASNameFamalyAndImage.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +59,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C30F44B1B514AAF004EBC5C /* CoreLocation.framework in Frameworks */,
+				6C30F4491B5132A1004EBC5C /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,9 +77,9 @@
 		6C30F4161B51327D004EBC5C = {
 			isa = PBXGroup;
 			children = (
+				6C30F44A1B514AAF004EBC5C /* CoreLocation.framework */,
+				6C30F4481B5132A1004EBC5C /* MapKit.framework */,
 				6C30F4211B51327D004EBC5C /* HW_37_38_MapKit */,
-				6C30F43B1B51327D004EBC5C /* HW_37_38_MapKitTests */,
-				6C30F4201B51327D004EBC5C /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,18 +90,20 @@
 				6C30F4381B51327D004EBC5C /* HW_37_38_MapKitTests.xctest */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		6C30F4211B51327D004EBC5C /* HW_37_38_MapKit */ = {
 			isa = PBXGroup;
 			children = (
-				6C30F4261B51327D004EBC5C /* AppDelegate.h */,
-				6C30F4271B51327D004EBC5C /* AppDelegate.m */,
 				6C30F4291B51327D004EBC5C /* ViewController.h */,
 				6C30F42A1B51327D004EBC5C /* ViewController.m */,
 				6C30F42C1B51327D004EBC5C /* Main.storyboard */,
-				6C30F42F1B51327D004EBC5C /* Images.xcassets */,
-				6C30F4311B51327D004EBC5C /* LaunchScreen.xib */,
+				6C30F44E1B515232004EBC5C /* ASStudent.h */,
+				6C30F44F1B515232004EBC5C /* ASStudent.m */,
+				6C30F4511B515339004EBC5C /* ASNameFamalyAndImage.h */,
+				6C30F4521B515339004EBC5C /* ASNameFamalyAndImage.m */,
+				6C30F44C1B5151FE004EBC5C /* images */,
 				6C30F4221B51327D004EBC5C /* Supporting Files */,
 			);
 			path = HW_37_38_MapKit;
@@ -96,6 +112,12 @@
 		6C30F4221B51327D004EBC5C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6C30F4261B51327D004EBC5C /* AppDelegate.h */,
+				6C30F4271B51327D004EBC5C /* AppDelegate.m */,
+				6C30F42F1B51327D004EBC5C /* Images.xcassets */,
+				6C30F4311B51327D004EBC5C /* LaunchScreen.xib */,
+				6C30F43B1B51327D004EBC5C /* HW_37_38_MapKitTests */,
+				6C30F4201B51327D004EBC5C /* Products */,
 				6C30F4231B51327D004EBC5C /* Info.plist */,
 				6C30F4241B51327D004EBC5C /* main.m */,
 			);
@@ -109,7 +131,7 @@
 				6C30F43C1B51327D004EBC5C /* Supporting Files */,
 			);
 			path = HW_37_38_MapKitTests;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		6C30F43C1B51327D004EBC5C /* Supporting Files */ = {
 			isa = PBXGroup;
@@ -168,6 +190,11 @@
 				TargetAttributes = {
 					6C30F41E1B51327D004EBC5C = {
 						CreatedOnToolsVersion = 6.3.2;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					6C30F4371B51327D004EBC5C = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -199,6 +226,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C30F44D1B5151FE004EBC5C /* images in Resources */,
 				6C30F42E1B51327D004EBC5C /* Main.storyboard in Resources */,
 				6C30F4331B51327D004EBC5C /* LaunchScreen.xib in Resources */,
 				6C30F4301B51327D004EBC5C /* Images.xcassets in Resources */,
@@ -220,6 +248,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C30F42B1B51327D004EBC5C /* ViewController.m in Sources */,
+				6C30F4501B515232004EBC5C /* ASStudent.m in Sources */,
+				6C30F4531B515339004EBC5C /* ASNameFamalyAndImage.m in Sources */,
 				6C30F4281B51327D004EBC5C /* AppDelegate.m in Sources */,
 				6C30F4251B51327D004EBC5C /* main.m in Sources */,
 			);
