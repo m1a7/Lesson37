@@ -57,7 +57,7 @@
         
         coordinateStudent2d.latitude  = latitudeStudent;
         coordinateStudent2d.longitude = longitudeStudent;
-        /////////////////////////////////////////////////
+
         
       
         self.coordinate = coordinateStudent2d;
