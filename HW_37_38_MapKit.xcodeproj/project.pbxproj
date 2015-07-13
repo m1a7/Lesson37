@@ -19,8 +19,7 @@
 		6C30F44D1B5151FE004EBC5C /* images in Resources */ = {isa = PBXBuildFile; fileRef = 6C30F44C1B5151FE004EBC5C /* images */; };
 		6C30F4501B515232004EBC5C /* ASStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C30F44F1B515232004EBC5C /* ASStudent.m */; };
 		6C30F4531B515339004EBC5C /* ASNameFamalyAndImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C30F4521B515339004EBC5C /* ASNameFamalyAndImage.m */; };
-		6CFD35FE1B527A9600D80F35 /* svqQj9hD-tI.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6CFD35FD1B527A9600D80F35 /* svqQj9hD-tI.jpg */; };
-		6CFD36001B527BFA00D80F35 /* Boss-3-512.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CFD35FF1B527BFA00D80F35 /* Boss-3-512.png */; };
+		6C5892741B54088500042B37 /* ASDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C5892731B54088500042B37 /* ASDetailViewController.m */; };
 		6CFD36041B52818E00D80F35 /* newImages in Resources */ = {isa = PBXBuildFile; fileRef = 6CFD36031B52818E00D80F35 /* newImages */; };
 /* End PBXBuildFile section */
 
@@ -55,8 +54,8 @@
 		6C30F44F1B515232004EBC5C /* ASStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASStudent.m; sourceTree = "<group>"; };
 		6C30F4511B515339004EBC5C /* ASNameFamalyAndImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASNameFamalyAndImage.h; sourceTree = "<group>"; };
 		6C30F4521B515339004EBC5C /* ASNameFamalyAndImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASNameFamalyAndImage.m; sourceTree = "<group>"; };
-		6CFD35FD1B527A9600D80F35 /* svqQj9hD-tI.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "svqQj9hD-tI.jpg"; sourceTree = "<group>"; };
-		6CFD35FF1B527BFA00D80F35 /* Boss-3-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Boss-3-512.png"; path = "images/man/Boss-3-512.png"; sourceTree = "<group>"; };
+		6C5892721B54088500042B37 /* ASDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASDetailViewController.h; sourceTree = "<group>"; };
+		6C5892731B54088500042B37 /* ASDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASDetailViewController.m; sourceTree = "<group>"; };
 		6CFD36031B52818E00D80F35 /* newImages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = newImages; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -104,13 +103,13 @@
 			children = (
 				6C30F4291B51327D004EBC5C /* ViewController.h */,
 				6C30F42A1B51327D004EBC5C /* ViewController.m */,
+				6C5892721B54088500042B37 /* ASDetailViewController.h */,
+				6C5892731B54088500042B37 /* ASDetailViewController.m */,
 				6C30F42C1B51327D004EBC5C /* Main.storyboard */,
 				6C30F44E1B515232004EBC5C /* ASStudent.h */,
 				6C30F44F1B515232004EBC5C /* ASStudent.m */,
 				6C30F4511B515339004EBC5C /* ASNameFamalyAndImage.h */,
 				6C30F4521B515339004EBC5C /* ASNameFamalyAndImage.m */,
-				6CFD35FD1B527A9600D80F35 /* svqQj9hD-tI.jpg */,
-				6CFD35FF1B527BFA00D80F35 /* Boss-3-512.png */,
 				6CFD36031B52818E00D80F35 /* newImages */,
 				6C30F44C1B5151FE004EBC5C /* images */,
 				6C30F4221B51327D004EBC5C /* Supporting Files */,
@@ -236,11 +235,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C30F44D1B5151FE004EBC5C /* images in Resources */,
-				6CFD36001B527BFA00D80F35 /* Boss-3-512.png in Resources */,
 				6CFD36041B52818E00D80F35 /* newImages in Resources */,
 				6C30F42E1B51327D004EBC5C /* Main.storyboard in Resources */,
 				6C30F4331B51327D004EBC5C /* LaunchScreen.xib in Resources */,
-				6CFD35FE1B527A9600D80F35 /* svqQj9hD-tI.jpg in Resources */,
 				6C30F4301B51327D004EBC5C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,6 +259,7 @@
 				6C30F42B1B51327D004EBC5C /* ViewController.m in Sources */,
 				6C30F4501B515232004EBC5C /* ASStudent.m in Sources */,
 				6C30F4531B515339004EBC5C /* ASNameFamalyAndImage.m in Sources */,
+				6C5892741B54088500042B37 /* ASDetailViewController.m in Sources */,
 				6C30F4281B51327D004EBC5C /* AppDelegate.m in Sources */,
 				6C30F4251B51327D004EBC5C /* main.m in Sources */,
 			);

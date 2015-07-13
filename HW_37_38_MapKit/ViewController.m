@@ -58,6 +58,7 @@
 }
 
 
+#pragma mark - MKMapViewDelegate
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
     
@@ -67,36 +68,27 @@
     
     static NSString* identifier = @"Annotation";
     
-    MKPinAnnotationView* pin = (MKPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+    MKAnnotationView* pin = [mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
     
     if (!pin) {
        
-        pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
-        
+        pin = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
+
         __weak ASStudent *weakSelf = annotation;
         
         if ([weakSelf isKindOfClass:[ASStudent class]] && ![weakSelf.image isEqual:nil]) {
             pin.image = weakSelf.image;
        
-        } else {
-        
-            pin.pinColor = MKPinAnnotationColorPurple;
-   
         }
         //pin.pinColor = MKPinAnnotationColorPurple;
         //pin.animatesDrop = YES;
         pin.canShowCallout = YES;
         pin.draggable = YES;
         [pin setEnabled:YES];
-
-        
-        
     } else {
         pin.annotation = annotation;
     }
-    ///////////
-    
-    
+
 return pin;
 }
 
@@ -106,9 +98,7 @@ return pin;
     
     static NSString* identifier = @"Annotation";
     
-    //MKPinAnnotationView* pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
-    //pin.pinColor = MKPinAnnotationColorPurple;
-    //MKAnnotationView* obj = [[MKAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"Annotation"];
+
     MKAnnotationView* pin = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
     pin.image = [UIImage imageNamed:@"newImages/malecostume-64.png"];
     pin.canShowCallout = YES;
@@ -123,9 +113,35 @@ return pin;
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view didChangeDragState:(MKAnnotationViewDragState)newState
    fromOldState:(MKAnnotationViewDragState)oldState {
     
-    //__strong MKAnnotationView *weakAnnotation = view;
-   // MKAnnotationView* tmp  = [self viewForAnnotation:view];
-   // view=tmp;
+
+    if (newState == MKAnnotationViewDragStateStarting) {
+        
+        [UIView animateWithDuration:0.2f
+                              delay:0
+                            options:UIViewAnimationCurveEaseIn | UIViewAnimationOptionAllowUserInteraction
+                         animations:^{
+                             
+                             view.transform = CGAffineTransformMakeScale(1.2f, 1.2f);
+                             view.alpha     = 0.5f;
+                             
+                         }
+                         completion:nil];
+    } else
+        if ((newState == MKAnnotationViewDragStateCanceling) || (newState == MKAnnotationViewDragStateEnding)) {
+            
+            [UIView animateWithDuration:0.25f
+                                  delay:0
+                                options:UIViewAnimationCurveEaseIn | UIViewAnimationOptionAllowUserInteraction
+                             animations:^{
+                                 
+                                 view.transform = CGAffineTransformMakeScale(1.f, 1.f);
+                                 view.alpha     = 1.f;
+                                 
+                             }
+                             completion:^(BOOL finished) {
+                                 view.dragState = MKAnnotationViewDragStateNone;
+                             }];
+        }
     
 }
 
@@ -134,9 +150,9 @@ return pin;
 
 
 
+#pragma mark - User Location
 
 -(void) showUserLocation:(MKMapView*) mapView andLocationManager:(CLLocationManager*) locationManager {
-    
     
     locationManager = [[CLLocationManager alloc ] init];
     locationManager.delegate = self;
@@ -162,6 +178,7 @@ return pin;
 }
 
 
+#pragma mark - action button method
 
 - (void) actionShowAll:(UIBarButtonItem*) sender {
     
