@@ -32,9 +32,11 @@
         
         
         if (self.genderEnum == ASMale) {
+            self.genderString = @"Male";
             self.image = [UIImage imageNamed:@"newImages/Army_officer-64.png"];
         }
         else {
+            self.genderString = @"Female";
             self.image = [UIImage imageNamed:@"newImages/Themis-64.png"];
         }
         

@@ -22,5 +22,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelCity;
 @property (weak, nonatomic) IBOutlet UILabel *labelStreet;
 
+@property (strong, nonatomic) NSDictionary* dataDict;
 
 @end

@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "ASStudent.h"
 #import "ASNameFamalyAndImage.h"
+#import "ASDetailViewController.h"
+#import "UIView+MKAnnotationView.h"
 
 @interface ViewController ()
 
@@ -16,6 +18,10 @@
 @property (strong, nonatomic) CLLocationManager* locationManager;
 @property (strong, nonatomic) CLLocation*        location;
 @property (strong, nonatomic) NSMutableArray* arrayStudents;
+
+@property (strong, nonatomic)  UIPopoverController*   popover;
+@property (strong, nonatomic) CLGeocoder* geoCoder;
+
 @end
 
 
@@ -47,7 +53,9 @@
                                                   target:self action:@selector(actionShowAll:)];
 
     self.navigationItem.rightBarButtonItem = zoomButton;
-    [self actionShowAll:nil];
+    //[self actionShowAll:nil];
+    self.geoCoder = [[CLGeocoder alloc] init];
+
 }
 
 
@@ -80,11 +88,14 @@
             pin.image = weakSelf.image;
        
         }
-        //pin.pinColor = MKPinAnnotationColorPurple;
-        //pin.animatesDrop = YES;
+        
+        UIButton* infoButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        [infoButton addTarget:self action:@selector(actionInfo:) forControlEvents:UIControlEventTouchUpInside];
+        
+        pin.rightCalloutAccessoryView = infoButton;
         pin.canShowCallout = YES;
         pin.draggable = YES;
-        [pin setEnabled:YES];
+
     } else {
         pin.annotation = annotation;
     }
@@ -94,19 +105,6 @@ return pin;
 
 
 
-- (MKAnnotationView *)viewForAnnotation:(id <MKAnnotation>)annotation {
-    
-    static NSString* identifier = @"Annotation";
-    
-
-    MKAnnotationView* pin = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
-    pin.image = [UIImage imageNamed:@"newImages/malecostume-64.png"];
-    pin.canShowCallout = YES;
-    pin.draggable = YES;
-    pin.enabled = YES;
-    
-    return pin;
-}
 
 
 
@@ -204,6 +202,119 @@ return pin;
                            animated:YES];
     
 }
+
+
+
+- (void) actionInfo:(UIButton*) sender {
+
+    MKAnnotationView* annotationView = [sender superAnnotationView];
+    
+    ASStudent *std = (ASStudent <MKAnnotation> *)[[sender superAnnotationView]annotation];
+
+    
+    if (!annotationView) {
+        return;
+    }
+    
+    CLLocationCoordinate2D coordinate = annotationView.annotation.coordinate;
+    
+    CLLocation* location = [[CLLocation alloc] initWithLatitude:coordinate.latitude
+                                                      longitude:coordinate.longitude];
+    
+    if ([self.geoCoder isGeocoding]) {
+        [self.geoCoder cancelGeocode];
+    }
+    
+    
+    [self.geoCoder
+     reverseGeocodeLocation:location
+     completionHandler:^(NSArray *placemarks, NSError *error) {
+         
+         NSString* message = nil;
+         
+         NSMutableDictionary*  messageDict = [NSMutableDictionary new];
+         NSDictionary*         tmpIntitialDict = @{@"name"   : std.firstname,
+                                                   @"famaly" : std.lastname,
+                                                   @"gender" : std.genderString,
+                                                   @"date"   : std.dateOfBirth };
+         if (error) {
+             
+             message = [error localizedDescription];
+             
+             [[[UIAlertView alloc]
+               initWithTitle:@"Ошибка"
+               message:message
+               delegate:nil
+               cancelButtonTitle:@"OK"
+               otherButtonTitles:nil] show];
+             
+         } else {
+             
+             if ([placemarks count] > 0) {
+                 
+                 MKPlacemark* placeMark = [placemarks firstObject];
+                 messageDict  = placeMark.addressDictionary;
+                 [messageDict addEntriesFromDictionary:tmpIntitialDict];
+                 
+             } else {
+                 message = @"No Placemarks Found";
+             }
+         }
+     
+         [self showPopover:sender messageDictionary:messageDict];
+     
+     }];
+
+}
+
+
+- (void) showPopover:(UIButton*) sender messageDictionary:(NSDictionary*) dict {
+    
+    
+
+    ASDetailViewController* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ASDetailViewController"];
+    
+    vc.dataDict = dict;
+
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        
+        vc.preferredContentSize = CGSizeMake(300, 300);
+        
+        UIPopoverController* pop = [[UIPopoverController alloc] initWithContentViewController:vc];
+        
+        
+        pop.delegate = self;
+        self.popover = pop;
+        
+        CGRect newBounds = sender.frame;
+        newBounds.origin.x -= 10;
+        newBounds.origin.y -= 10;
+        newBounds.size.width += 25;
+        newBounds.size.height += 25;
+
+        
+        [pop presentPopoverFromRect:newBounds//[sender frame]
+                             inView:sender
+           permittedArrowDirections:UIPopoverArrowDirectionAny
+                           animated:YES];
+    }
+    else {
+        [self showControllerAsModal:vc];
+    }
+}
+
+
+-(void) showControllerAsModal:(UIViewController*) vc {
+    
+    
+    UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    
+    [self presentViewController:nav
+                       animated:YES
+                     completion:nil];
+}
+
 
 
 

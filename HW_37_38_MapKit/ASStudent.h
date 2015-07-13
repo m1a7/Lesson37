@@ -29,6 +29,7 @@ typedef enum ASGender {
 @property (strong, nonatomic) NSString* firstname;
 @property (strong, nonatomic) NSString* lastname;
 @property (strong, nonatomic) NSString* dateOfBirth;
+@property (strong, nonatomic) NSString* genderString;
 
 
 @property (assign, nonatomic) ASGender    genderEnum;

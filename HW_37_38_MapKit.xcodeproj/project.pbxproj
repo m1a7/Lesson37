@@ -20,6 +20,7 @@
 		6C30F4501B515232004EBC5C /* ASStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C30F44F1B515232004EBC5C /* ASStudent.m */; };
 		6C30F4531B515339004EBC5C /* ASNameFamalyAndImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C30F4521B515339004EBC5C /* ASNameFamalyAndImage.m */; };
 		6C5892741B54088500042B37 /* ASDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C5892731B54088500042B37 /* ASDetailViewController.m */; };
+		6C5892771B54151E00042B37 /* UIView+MKAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C5892761B54151E00042B37 /* UIView+MKAnnotationView.m */; };
 		6CFD36041B52818E00D80F35 /* newImages in Resources */ = {isa = PBXBuildFile; fileRef = 6CFD36031B52818E00D80F35 /* newImages */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,8 @@
 		6C30F4521B515339004EBC5C /* ASNameFamalyAndImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASNameFamalyAndImage.m; sourceTree = "<group>"; };
 		6C5892721B54088500042B37 /* ASDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASDetailViewController.h; sourceTree = "<group>"; };
 		6C5892731B54088500042B37 /* ASDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASDetailViewController.m; sourceTree = "<group>"; };
+		6C5892751B54151E00042B37 /* UIView+MKAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MKAnnotationView.h"; sourceTree = "<group>"; };
+		6C5892761B54151E00042B37 /* UIView+MKAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MKAnnotationView.m"; sourceTree = "<group>"; };
 		6CFD36031B52818E00D80F35 /* newImages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = newImages; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -110,6 +113,8 @@
 				6C30F44F1B515232004EBC5C /* ASStudent.m */,
 				6C30F4511B515339004EBC5C /* ASNameFamalyAndImage.h */,
 				6C30F4521B515339004EBC5C /* ASNameFamalyAndImage.m */,
+				6C5892751B54151E00042B37 /* UIView+MKAnnotationView.h */,
+				6C5892761B54151E00042B37 /* UIView+MKAnnotationView.m */,
 				6CFD36031B52818E00D80F35 /* newImages */,
 				6C30F44C1B5151FE004EBC5C /* images */,
 				6C30F4221B51327D004EBC5C /* Supporting Files */,
@@ -256,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C5892771B54151E00042B37 /* UIView+MKAnnotationView.m in Sources */,
 				6C30F42B1B51327D004EBC5C /* ViewController.m in Sources */,
 				6C30F4501B515232004EBC5C /* ASStudent.m in Sources */,
 				6C30F4531B515339004EBC5C /* ASNameFamalyAndImage.m in Sources */,
