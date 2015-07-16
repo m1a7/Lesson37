@@ -52,6 +52,9 @@
     self.navigationItem.leftBarButtonItem = backButtonItem;
     self.navigationItem.title = @"Detailed information";
     
+    
+    
+
 }
 
 - (void)didReceiveMemoryWarning {

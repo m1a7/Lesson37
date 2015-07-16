@@ -8,6 +8,7 @@
 
 #import "ASStudent.h"
 #import <MapKit/MapKit.h>
+#import "UIImage+imageWithImage.h"
 
 @implementation ASStudent
 
@@ -34,10 +35,14 @@
         if (self.genderEnum == ASMale) {
             self.genderString = @"Male";
             self.image = [UIImage imageNamed:@"newImages/Army_officer-64.png"];
+            self.image    = [UIImage imageWithImage:self.image scaledToSize:CGSizeMake(42, 42)];
+
         }
         else {
             self.genderString = @"Female";
             self.image = [UIImage imageNamed:@"newImages/Themis-64.png"];
+            self.image    = [UIImage imageWithImage:self.image scaledToSize:CGSizeMake(42, 42)];
+
         }
         
         
@@ -64,7 +69,7 @@
         
         
         
-        NSLog(@" latitudeStudent = %f   longitudeStudent = %f",latitudeStudent,longitudeStudent);
+       // NSLog(@" latitudeStudent = %f   longitudeStudent = %f",latitudeStudent,longitudeStudent);
         //NSLog(@"\tName = %@     \tFamaly = %@     \tDate = %@  |",name,  famaly, string);
     }
     return self;

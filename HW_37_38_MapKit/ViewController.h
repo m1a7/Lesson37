@@ -11,7 +11,7 @@
 #import <CoreLocation/CoreLocation.h>
 
 
-@interface ViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
+@interface ViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, UIPopoverControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
