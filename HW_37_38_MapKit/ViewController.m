@@ -15,8 +15,6 @@
 #import "ASDetailTypeInstitytion.h"
 #import "ASMeetingPoint.h"
 
-#import "TestVC.h"
-#import "SuperTestView.h"
 
 @interface ViewController () <ASDetailTypeInstitytionDelegate>
 
@@ -41,32 +39,52 @@
     [super viewDidLoad];
 
  
-    [self showUserLocation:self.mapView andLocationManager:self.locationManager];
-
-
-    ASNameFamalyAndImage* obj = [[ASNameFamalyAndImage alloc] init];
+ //   [self showUserLocation:self.mapView andLocationManager:self.locationManager];
 
     
-    for (int i=0; i<=10; i++) {
-        NSString* name   = [obj.arrayNames objectAtIndex:   arc4random()%[obj.arrayNames count]];
-        NSString* famaly = [obj.arrayFamaly objectAtIndex:  arc4random()%[obj.arrayFamaly count]];
-        
-        ASStudent* std = [[ASStudent alloc] initWithName:name andFamaly:famaly andUserLocation: self.locationManager.location];
-        [self.mapView addAnnotation:std];
-    }
-    obj = nil;
+    
+    [self showUserLocation:self.mapView andLocationManager:self.locationManager];
+    
+    
+ 
+    
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)),
+                   dispatch_get_main_queue(), ^{
+               ASNameFamalyAndImage* obj = [[ASNameFamalyAndImage alloc] init];
+               
+               NSLog(@"Доколе ");
+               
+               for (int i=0; i<=10; i++) {
+                   NSString* name   = [obj.arrayNames objectAtIndex:   arc4random()%[obj.arrayNames count]];
+                   NSString* famaly = [obj.arrayFamaly objectAtIndex:  arc4random()%[obj.arrayFamaly count]];
+                   
+                 
+                   ASStudent* std = [[ASStudent alloc] initWithName:name andFamaly:famaly andMeetingPointLocation:self.locationManager.location.coordinate];
+                   [self.mapView addAnnotation:std];
+               }
+               obj = nil;
+                       
+     });
+    
 
     UIBarButtonItem* zoomButton =
     [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch
                                                   target:self action:@selector(actionShowAll:)];
 
-    self.navigationItem.rightBarButtonItem = zoomButton;
+    
+
+    //self.navigationItem.rightBarButtonItems = @[zoomButton, addStudentButton];
+
+    
+ 
+    
+     self.navigationItem.rightBarButtonItem = zoomButton;
     self.geoCoder = [[CLGeocoder alloc] init];
 
     
    UILongPressGestureRecognizer* longTapGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongTap:)];
    longTapGesture.minimumPressDuration = 1.0f;
-   //longTapGesture.allowableMovement = 100.0f;
     
     [self.mapView addGestureRecognizer:longTapGesture];
     
@@ -106,86 +124,7 @@
 return nil;
 }
 
-/*
-- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
-{
-    [mapView deselectAnnotation:view.annotation animated:YES];
-    
-    TestVC *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"TestVC"];
-    
-    
-    vc.preferredContentSize = CGSizeMake(150, 90);
-    
-    UIPopoverController* pop = [[UIPopoverController alloc] initWithContentViewController:vc];
-    
-    
-    pop.delegate = self;
-    self.popover = pop;
 
-    [pop presentPopoverFromRect:view.bounds inView:view
-      permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-    
-}*/
-
--(void) mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
-    
-    /*
-    if ([view.annotation isKindOfClass:[ASStudent class]]) {
-   
-        ASStudent* std = view.annotation;
-    
-    [mapView deselectAnnotation:view.annotation animated:YES];
-    
-    TestVC *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"TestVC"];
-    
-    
-    vc.preferredContentSize = CGSizeMake(150, 90);
-    
-    UIPopoverController* pop = [[UIPopoverController alloc] initWithContentViewController:vc];
-    
-    
-    pop.delegate = self;
-    self.popover = pop;
-    
-    [pop presentPopoverFromRect:view.bounds inView:view
-       permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-  }*/
-    
-    if ([view.annotation isKindOfClass:[ASMeetingPoint class]]) {
-        
-        ASMeetingPoint* meeting = view.annotation;
-        
-        [mapView deselectAnnotation:view.annotation animated:YES];
-        
-        SuperTestView* testView = [[[NSBundle mainBundle] loadNibNamed:@"CustomView" owner:self options:nil] lastObject];
-        
-        testView.bounds = CGRectMake(CGRectGetMinY(view.frame), CGRectGetMinX(view.frame), 150, 80);
-        testView.labelText.bounds = CGRectMake(CGRectGetMinY(view.frame), CGRectGetMinX(view.frame), 150, 80);
-        testView.labelText.text = @"Text Hard Core";
-        [self.view addSubview:testView];
-        
-    }
-    
-/*
-    if([view.annotation isKindOfClass:[ASStudent class]]) {
-        CalloutAnnotation *calloutAnnotation = [[CalloutAnnotation alloc] initForAnnotation:view.annotation];
-        [mapView addAnnotation:calloutAnnotation];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [mapView selectAnnotation:calloutAnnotation animated:YES];
-        });
-    }*/
-    
-}
-
--(void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view {
-    
-    
-    for (UIView* subview in view.subviews) {
-        
-        [subview removeFromSuperview];
-    }
-    
-}
 
 
 -(MKAnnotationView *) creatASStudntPin:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation{
@@ -239,6 +178,14 @@ return nil;
           } else {
               pin.image = [UIImage imageNamed:@"meeting@3x.jpg"];
           }
+        
+        
+  
+        UIButton* addStudentButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        [addStudentButton addTarget:self action:@selector(actionAddStudent:) forControlEvents:UIControlEventTouchUpInside];
+        
+        pin.rightCalloutAccessoryView = addStudentButton;
+        
         
         pin.canShowCallout = YES;
         pin.draggable = YES;
@@ -328,6 +275,36 @@ return nil;
 
 
 #pragma mark - action button method
+
+- (void) actionAddStudent:(UIButton*) sender {
+
+    MKAnnotationView* annotationView = [sender superAnnotationView];
+
+    ASMeetingPoint *meeting = (ASMeetingPoint <MKAnnotation> *)[[sender superAnnotationView]annotation];
+    
+    ASNameFamalyAndImage* obj = [[ASNameFamalyAndImage alloc] init];
+    
+    CLLocationCoordinate2D coordinate;
+    coordinate.latitude = 60.0;
+    coordinate.longitude = 10.0;
+    
+    for (int i=0; i<=10; i++) {
+        NSString* name   = [obj.arrayNames objectAtIndex:   arc4random()%[obj.arrayNames count]];
+        NSString* famaly = [obj.arrayFamaly objectAtIndex:  arc4random()%[obj.arrayFamaly count]];
+        
+       ASStudent* std = [[ASStudent alloc] initWithName:name andFamaly:famaly andMeetingPointLocation:meeting.coordinate];
+     
+        [self.mapView addAnnotation:std];
+    
+    }
+    obj = nil;
+
+    for (id <MKAnnotation> annotation in self.mapView.annotations) {
+        [self.mapView viewForAnnotation:annotation];
+    }
+}
+
+
 
 - (void) actionShowAll:(UIBarButtonItem*) sender {
     
@@ -451,7 +428,6 @@ return nil;
         
         pop.delegate = self;
         self.popover = pop;
-        //popover = pop;
         
        
         CGRect newBounds = sender.frame;
@@ -541,7 +517,6 @@ return nil;
     ASMeetingPoint* meetingPoint = [[ASMeetingPoint alloc] initWithNameBuild:nameBuild image:nameImage location:&coordinateStudent2d];
 
     [self.mapView addAnnotation:meetingPoint];
-   // self.locationLongTouchForMeetingPoint = CGPointZero;
 
 }
 

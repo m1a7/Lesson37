@@ -24,9 +24,6 @@
 		6C834D991B57B38600EE339C /* meeting@3x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6C834D981B57B38600EE339C /* meeting@3x.jpg */; };
 		6C834DA31B57BA1300EE339C /* TypesInstitution in Resources */ = {isa = PBXBuildFile; fileRef = 6C834DA21B57BA1300EE339C /* TypesInstitution */; };
 		6C834DA61B57BB3D00EE339C /* UIImage+imageWithImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C834DA51B57BB3D00EE339C /* UIImage+imageWithImage.m */; };
-		6C834DAD1B57EA2700EE339C /* TestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C834DAC1B57EA2700EE339C /* TestVC.m */; };
-		6C834DAF1B57F74700EE339C /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C834DAE1B57F74700EE339C /* CustomView.xib */; };
-		6C834DB21B57F78100EE339C /* SuperTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C834DB11B57F78100EE339C /* SuperTestView.m */; };
 		6CA756841B5508C10043827A /* ASMeetingPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CA756831B5508C10043827A /* ASMeetingPoint.m */; };
 		6CA7568F1B5557A70043827A /* ASDetailTypeInstitytion.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CA7568E1B5557A70043827A /* ASDetailTypeInstitytion.m */; };
 		6CFD36041B52818E00D80F35 /* newImages in Resources */ = {isa = PBXBuildFile; fileRef = 6CFD36031B52818E00D80F35 /* newImages */; };
@@ -71,11 +68,6 @@
 		6C834DA21B57BA1300EE339C /* TypesInstitution */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TypesInstitution; sourceTree = SOURCE_ROOT; };
 		6C834DA41B57BB3D00EE339C /* UIImage+imageWithImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+imageWithImage.h"; sourceTree = "<group>"; };
 		6C834DA51B57BB3D00EE339C /* UIImage+imageWithImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+imageWithImage.m"; sourceTree = "<group>"; };
-		6C834DAB1B57EA2700EE339C /* TestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestVC.h; sourceTree = "<group>"; };
-		6C834DAC1B57EA2700EE339C /* TestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestVC.m; sourceTree = "<group>"; };
-		6C834DAE1B57F74700EE339C /* CustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
-		6C834DB01B57F78100EE339C /* SuperTestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperTestView.h; sourceTree = "<group>"; };
-		6C834DB11B57F78100EE339C /* SuperTestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuperTestView.m; sourceTree = "<group>"; };
 		6CA756821B5508C10043827A /* ASMeetingPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASMeetingPoint.h; sourceTree = "<group>"; };
 		6CA756831B5508C10043827A /* ASMeetingPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASMeetingPoint.m; sourceTree = "<group>"; };
 		6CA7568D1B5557A70043827A /* ASDetailTypeInstitytion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASDetailTypeInstitytion.h; sourceTree = "<group>"; };
@@ -126,13 +118,8 @@
 			isa = PBXGroup;
 			children = (
 				6C30F42C1B51327D004EBC5C /* Main.storyboard */,
-				6C834DAE1B57F74700EE339C /* CustomView.xib */,
-				6C834DB01B57F78100EE339C /* SuperTestView.h */,
-				6C834DB11B57F78100EE339C /* SuperTestView.m */,
 				6CA7568D1B5557A70043827A /* ASDetailTypeInstitytion.h */,
 				6CA7568E1B5557A70043827A /* ASDetailTypeInstitytion.m */,
-				6C834DAB1B57EA2700EE339C /* TestVC.h */,
-				6C834DAC1B57EA2700EE339C /* TestVC.m */,
 				6CA756871B5555D40043827A /* ViewController */,
 				6CA756881B5555E60043827A /* ASDetailViewController */,
 				6CA756891B5555F10043827A /* ASStudent */,
@@ -334,7 +321,6 @@
 				6CFD36041B52818E00D80F35 /* newImages in Resources */,
 				6C30F42E1B51327D004EBC5C /* Main.storyboard in Resources */,
 				6C834DA31B57BA1300EE339C /* TypesInstitution in Resources */,
-				6C834DAF1B57F74700EE339C /* CustomView.xib in Resources */,
 				6C30F4331B51327D004EBC5C /* LaunchScreen.xib in Resources */,
 				6C30F4301B51327D004EBC5C /* Images.xcassets in Resources */,
 			);
@@ -357,12 +343,10 @@
 				6C5892771B54151E00042B37 /* UIView+MKAnnotationView.m in Sources */,
 				6C30F42B1B51327D004EBC5C /* ViewController.m in Sources */,
 				6CA756841B5508C10043827A /* ASMeetingPoint.m in Sources */,
-				6C834DAD1B57EA2700EE339C /* TestVC.m in Sources */,
 				6C30F4501B515232004EBC5C /* ASStudent.m in Sources */,
 				6C30F4531B515339004EBC5C /* ASNameFamalyAndImage.m in Sources */,
 				6C834DA61B57BB3D00EE339C /* UIImage+imageWithImage.m in Sources */,
 				6C5892741B54088500042B37 /* ASDetailViewController.m in Sources */,
-				6C834DB21B57F78100EE339C /* SuperTestView.m in Sources */,
 				6CA7568F1B5557A70043827A /* ASDetailTypeInstitytion.m in Sources */,
 				6C30F4281B51327D004EBC5C /* AppDelegate.m in Sources */,
 				6C30F4251B51327D004EBC5C /* main.m in Sources */,

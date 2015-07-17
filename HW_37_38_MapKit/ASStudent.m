@@ -16,8 +16,10 @@
 #define ARC4RANDOM_MAX      0x100000000
 
 
--(instancetype) initWithName:(NSString*)name andFamaly:(NSString*)famaly andUserLocation:(CLLocation *)newLocation{
-    self = [super init];
+//-(instancetype) initWithName:(NSString*)name andFamaly:(NSString*)famaly andUserLocation:(CLLocation *)newLocation{
+-(instancetype) initWithName:(NSString*)name andFamaly:(NSString*)famaly andMeetingPointLocation:(CLLocationCoordinate2D)pointCoordinate{
+
+  self = [super init];
     
     if (self) {
         
@@ -48,7 +50,7 @@
         
         
         // От координат пользователя будем выставлять студентов
-        CLLocationCoordinate2D coordinateUser2d = newLocation.coordinate;
+        CLLocationCoordinate2D coordinateUser2d = pointCoordinate;
         
         double latitudeUser  = coordinateUser2d.latitude;
         double longitudeUser = coordinateUser2d.longitude;
@@ -69,7 +71,12 @@
         
         
         
-       // NSLog(@" latitudeStudent = %f   longitudeStudent = %f",latitudeStudent,longitudeStudent);
+        
+        
+        
+        
+        
+        NSLog(@" latitudeStudent = %f   longitudeStudent = %f",latitudeStudent,longitudeStudent);
         //NSLog(@"\tName = %@     \tFamaly = %@     \tDate = %@  |",name,  famaly, string);
     }
     return self;

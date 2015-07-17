@@ -37,7 +37,8 @@ typedef enum ASGender {
 
 
 
--(instancetype) initWithName:(NSString*)name andFamaly:(NSString*)famaly andUserLocation:(CLLocation *)newLocation;
+//-(instancetype) initWithName:(NSString*)name andFamaly:(NSString*)famaly andUserLocation:(CLLocation *)newLocation;
+-(instancetype) initWithName:(NSString*)name andFamaly:(NSString*)famaly andMeetingPointLocation:(CLLocationCoordinate2D)pointCoordinate;
 
 
 @end
