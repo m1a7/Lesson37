@@ -32,8 +32,24 @@
                             <constraint firstItem="JKJ-aR-5fg" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="cvI-yt-Yu4"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="IRe-WW-jSO"/>
+                    <navigationItem key="navigationItem" title="Title" id="IRe-WW-jSO">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="m12-kV-o2m">
+                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="3J0-gv-CaP">
+                                <rect key="frame" x="16" y="7" width="185" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Map"/>
+                                    <segment title="Hybrid"/>
+                                    <segment title="Satelite"/>
+                                </segments>
+                                <connections>
+                                    <action selector="mapTypeChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="oLA-vF-I3Z"/>
+                                </connections>
+                            </segmentedControl>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="mapTypeSegmentedControl" destination="3J0-gv-CaP" id="IEF-Ra-A9I"/>
                         <outlet property="mapView" destination="JKJ-aR-5fg" id="X3n-40-9Wb"/>
                     </connections>
                 </viewController>

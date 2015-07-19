@@ -26,6 +26,9 @@
 		6C834DA61B57BB3D00EE339C /* UIImage+imageWithImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C834DA51B57BB3D00EE339C /* UIImage+imageWithImage.m */; };
 		6CA756841B5508C10043827A /* ASMeetingPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CA756831B5508C10043827A /* ASMeetingPoint.m */; };
 		6CA7568F1B5557A70043827A /* ASDetailTypeInstitytion.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CA7568E1B5557A70043827A /* ASDetailTypeInstitytion.m */; };
+		6CA8B2B21B59140E005B85D1 /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CA8B2B11B59140E005B85D1 /* delete.png */; };
+		6CDF864F1B5A90C3002CAFAD /* RadiusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CDF864E1B5A90C3002CAFAD /* RadiusView.xib */; };
+		6CDF86521B5A91C1002CAFAD /* CustomRadiusTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CDF86511B5A91C1002CAFAD /* CustomRadiusTableView.m */; };
 		6CFD36041B52818E00D80F35 /* newImages in Resources */ = {isa = PBXBuildFile; fileRef = 6CFD36031B52818E00D80F35 /* newImages */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +75,10 @@
 		6CA756831B5508C10043827A /* ASMeetingPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASMeetingPoint.m; sourceTree = "<group>"; };
 		6CA7568D1B5557A70043827A /* ASDetailTypeInstitytion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASDetailTypeInstitytion.h; sourceTree = "<group>"; };
 		6CA7568E1B5557A70043827A /* ASDetailTypeInstitytion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASDetailTypeInstitytion.m; sourceTree = "<group>"; };
+		6CA8B2B11B59140E005B85D1 /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete.png; sourceTree = "<group>"; };
+		6CDF864E1B5A90C3002CAFAD /* RadiusView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadiusView.xib; sourceTree = "<group>"; };
+		6CDF86501B5A91C1002CAFAD /* CustomRadiusTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomRadiusTableView.h; sourceTree = "<group>"; };
+		6CDF86511B5A91C1002CAFAD /* CustomRadiusTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomRadiusTableView.m; sourceTree = "<group>"; };
 		6CFD36031B52818E00D80F35 /* newImages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = newImages; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -118,9 +125,11 @@
 			isa = PBXGroup;
 			children = (
 				6C30F42C1B51327D004EBC5C /* Main.storyboard */,
-				6CA7568D1B5557A70043827A /* ASDetailTypeInstitytion.h */,
-				6CA7568E1B5557A70043827A /* ASDetailTypeInstitytion.m */,
+				6CDF864E1B5A90C3002CAFAD /* RadiusView.xib */,
+				6CDF86501B5A91C1002CAFAD /* CustomRadiusTableView.h */,
+				6CDF86511B5A91C1002CAFAD /* CustomRadiusTableView.m */,
 				6CA756871B5555D40043827A /* ViewController */,
+				6CDF864D1B5A909E002CAFAD /* ASDetailTypeInstitytion */,
 				6CA756881B5555E60043827A /* ASDetailViewController */,
 				6CA756891B5555F10043827A /* ASStudent */,
 				6CA7568A1B5556020043827A /* ASNameFamalyAndImage */,
@@ -131,6 +140,7 @@
 				6C30F44C1B5151FE004EBC5C /* images */,
 				6C834DA21B57BA1300EE339C /* TypesInstitution */,
 				6C834D981B57B38600EE339C /* meeting@3x.jpg */,
+				6CA8B2B11B59140E005B85D1 /* delete.png */,
 				6C30F4221B51327D004EBC5C /* Supporting Files */,
 			);
 			path = HW_37_38_MapKit;
@@ -231,6 +241,15 @@
 			name = "UIView+MKAnnotationView";
 			sourceTree = "<group>";
 		};
+		6CDF864D1B5A909E002CAFAD /* ASDetailTypeInstitytion */ = {
+			isa = PBXGroup;
+			children = (
+				6CA7568D1B5557A70043827A /* ASDetailTypeInstitytion.h */,
+				6CA7568E1B5557A70043827A /* ASDetailTypeInstitytion.m */,
+			);
+			name = ASDetailTypeInstitytion;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -316,10 +335,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CA8B2B21B59140E005B85D1 /* delete.png in Resources */,
 				6C834D991B57B38600EE339C /* meeting@3x.jpg in Resources */,
 				6C30F44D1B5151FE004EBC5C /* images in Resources */,
 				6CFD36041B52818E00D80F35 /* newImages in Resources */,
 				6C30F42E1B51327D004EBC5C /* Main.storyboard in Resources */,
+				6CDF864F1B5A90C3002CAFAD /* RadiusView.xib in Resources */,
 				6C834DA31B57BA1300EE339C /* TypesInstitution in Resources */,
 				6C30F4331B51327D004EBC5C /* LaunchScreen.xib in Resources */,
 				6C30F4301B51327D004EBC5C /* Images.xcassets in Resources */,
@@ -345,6 +366,7 @@
 				6CA756841B5508C10043827A /* ASMeetingPoint.m in Sources */,
 				6C30F4501B515232004EBC5C /* ASStudent.m in Sources */,
 				6C30F4531B515339004EBC5C /* ASNameFamalyAndImage.m in Sources */,
+				6CDF86521B5A91C1002CAFAD /* CustomRadiusTableView.m in Sources */,
 				6C834DA61B57BB3D00EE339C /* UIImage+imageWithImage.m in Sources */,
 				6C5892741B54088500042B37 /* ASDetailViewController.m in Sources */,
 				6CA7568F1B5557A70043827A /* ASDetailTypeInstitytion.m in Sources */,

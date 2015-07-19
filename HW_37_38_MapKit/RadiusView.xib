@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CustomRadiusTableView">
+            <rect key="frame" x="0.0" y="0.0" width="517" height="190"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uzi-kI-AkD">
+                    <rect key="frame" x="10" y="27" width="496" height="41"/>
+                    <color key="backgroundColor" red="0.78589238980478149" green="1" blue="0.81375289023824382" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="41" id="27e-fI-NbM"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KHv-ID-EGR">
+                    <rect key="frame" x="10" y="81" width="496" height="41"/>
+                    <color key="backgroundColor" red="0.78589238979999998" green="1" blue="0.81375289019999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="41" id="yIZ-dZ-2Bp"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQ3-zE-5Bd">
+                    <rect key="frame" x="8" y="135" width="496" height="41"/>
+                    <color key="backgroundColor" red="0.78589238979999998" green="1" blue="0.81375289019999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="uzi-kI-AkD" firstAttribute="leading" secondItem="KHv-ID-EGR" secondAttribute="leading" id="2Tl-Hz-Q9X"/>
+                <constraint firstItem="rQ3-zE-5Bd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="4ij-g4-8AC"/>
+                <constraint firstItem="rQ3-zE-5Bd" firstAttribute="top" secondItem="KHv-ID-EGR" secondAttribute="bottom" constant="13" id="8F2-SG-nE2"/>
+                <constraint firstAttribute="trailing" secondItem="rQ3-zE-5Bd" secondAttribute="trailing" constant="13" id="G1h-lU-IuQ"/>
+                <constraint firstItem="uzi-kI-AkD" firstAttribute="trailing" secondItem="KHv-ID-EGR" secondAttribute="trailing" id="KN0-Gl-ufn"/>
+                <constraint firstAttribute="bottom" secondItem="rQ3-zE-5Bd" secondAttribute="bottom" constant="14" id="LIj-D3-YX4"/>
+                <constraint firstItem="uzi-kI-AkD" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="Lvi-Ye-obz"/>
+                <constraint firstItem="uzi-kI-AkD" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="27" id="aaT-fU-VFo"/>
+                <constraint firstItem="KHv-ID-EGR" firstAttribute="top" secondItem="uzi-kI-AkD" secondAttribute="bottom" constant="13" id="ngF-hf-QLd"/>
+                <constraint firstItem="KHv-ID-EGR" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="rbq-aW-cNk"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="labelRadius1" destination="uzi-kI-AkD" id="yLa-zZ-ETH"/>
+                <outlet property="labelRadius2" destination="KHv-ID-EGR" id="vxq-gJ-SUD"/>
+                <outlet property="labelRadius3" destination="rQ3-zE-5Bd" id="sCw-Dm-I7O"/>
+            </connections>
+            <point key="canvasLocation" x="322.5" y="317"/>
+        </view>
+    </objects>
+</document>

@@ -8,43 +8,47 @@
 
 #import "ASMeetingPoint.h"
 #import "UIImage+imageWithImage.h"
+#import <MapKit/MapKit.h>
 
 @implementation ASMeetingPoint
 #define ARC4RANDOM_MAX      0x100000000
 
 
-//-(instancetype) initWithNameBuild:(NSString*)nameBuild andNameImage:(NSString*)nameImage {
--(instancetype) initWithNameBuild:(NSString*)nameBuild image:(NSString*)nameImage location:(CLLocationCoordinate2D*) coordinate {
-  self = [super init];
+
+-(void) dealloc {
+
+    self.image = nil;
+}
+
+-(instancetype) initWithNameBuild:(NSString*)nameBuild image:(NSString*)nameImage location:(CLLocationCoordinate2D) coordinate {
+
+    self = [super init];
     
     if (self) {
      
-        NSLog(@"ASMeeting init");
-        self.imageDict  = @{@"TypesInstitution/ASRestaurant.png" : @0,
-                            @"TypesInstitution/ASBistro.png"     : @1,
-                            @"TypesInstitution/ASCafe.png"       : @2,
-                            @"TypesInstitution/ASPizzeria.png"   : @3,
-                            @"TypesInstitution/ASBarbecue.png"   : @4,
-                            @"TypesInstitution/ASPub.png"        : @5,
-                            @"TypesInstitution/ASBar.png"        : @6,
-                            @"TypesInstitution/ASTheater.png"    : @7,
-                            @"TypesInstitution/ASBilliards.png"  : @8,
-                            @"TypesInstitution/ASBowling.png"    : @9,
-                            @"TypesInstitution/ASNightClub.png"  : @10,
-                            @"TypesInstitution/ASPark.png"       : @11};
-        
+
         
     
       self.rating           = [self randomFloatBetween:1 andLargerFloat:10];
       self.capacityBuilding = [self randomIntegerBetween:10 andLargerFloat:200];
-      self.coordinate       = *(coordinate);
-        
+    
+      self.coordinate       = coordinate;
+
       self.title    = [NSString stringWithFormat:@"%@",nameBuild];
       self.subtitle = [NSString stringWithFormat:@"Рейтинг - %.2f",self.rating];
       self.image    = [UIImage imageNamed:[NSString stringWithFormat:@"TypesInstitution/%@",nameImage]];
       self.image    = [UIImage imageWithImage:self.image scaledToSize:CGSizeMake(48, 48)];
-        
-       // = [MYUtil imageWithImage:myUIImageInstance scaledToSize:CGSizeMake(20, 20)];
+      self.arrayStudents      = [[NSMutableArray alloc] init];
+      self.arrayOverlayCircle = [[NSMutableArray alloc] init];
+ 
+      MKCircle *circle1 = [MKCircle circleWithCenterCoordinate:self.coordinate radius:500];
+      MKCircle *circle2 = [MKCircle circleWithCenterCoordinate:self.coordinate radius:1000];
+      MKCircle *circle3 = [MKCircle circleWithCenterCoordinate:self.coordinate radius:1500];
+
+      self.arrayOverlayCircle = [NSMutableArray arrayWithObjects: circle1,circle2,circle3, nil];
+        self.arrayPolyline = [[NSMutableArray alloc]init];
+  
+      NSLog(@"\n\n\nASMeetingPoint instancetype \n\nTitle = %@\nImage = %@\n\n",self.title,nameImage);
     }
     
   return self;

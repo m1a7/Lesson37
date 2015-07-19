@@ -35,12 +35,12 @@ typedef enum ASTypesPublicInstitution {
 } ASTypesPublicInstitution;
 
 
--(instancetype) initWithNameBuild:(NSString*)nameBuild image:(NSString*)nameImage location:(CLLocationCoordinate2D*) coordinate;
+-(instancetype) initWithNameBuild:(NSString*)nameBuild image:(NSString*)nameImage location:(CLLocationCoordinate2D) coordinate;
 
 
 @property (nonatomic, assign) CLLocationCoordinate2D coordinate;
-@property (nonatomic, copy) NSString *title;
-@property (nonatomic, copy) NSString *subtitle;
+@property (nonatomic, copy)   NSString *title;
+@property (nonatomic, copy)   NSString *subtitle;
 
 
 @property (nonatomic, assign) CGFloat    rating;
@@ -49,9 +49,12 @@ typedef enum ASTypesPublicInstitution {
 @property (nonatomic, assign) ASTypesPublicInstitution    typeInstitute;
 
 @property (strong,   nonatomic) UIImage*    image;
-@property (nonatomic, strong) NSDictionary* imageDict;
+@property (nonatomic, strong)   NSDictionary* imageDict;
 
 
+@property (strong, nonatomic) NSMutableArray*     arrayStudents;
+@property (strong, nonatomic) NSMutableArray*     arrayOverlayCircle;
+@property (strong, nonatomic) NSMutableArray*     arrayPolyline;
 
 -(double)randomFloatBetween:(double)num1 andLargerFloat:(double)num2;
 -(NSInteger)randomIntegerBetween:(NSInteger)num1 andLargerFloat:(NSInteger)num2;

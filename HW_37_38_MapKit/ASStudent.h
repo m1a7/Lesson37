@@ -8,7 +8,7 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import <MapKit/MKAnnotation.h>
-
+#import <MapKit/MapKit.h>
 
 @interface ASStudent : NSObject  <MKAnnotation>
 
@@ -33,11 +33,10 @@ typedef enum ASGender {
 
 
 @property (assign, nonatomic) ASGender    genderEnum;
-@property (weak,   nonatomic) UIImage*    image;
+@property (strong, nonatomic) UIImage*    image;
 
+@property (strong, nonatomic) MKPolyline* polyline;
 
-
-//-(instancetype) initWithName:(NSString*)name andFamaly:(NSString*)famaly andUserLocation:(CLLocation *)newLocation;
 -(instancetype) initWithName:(NSString*)name andFamaly:(NSString*)famaly andMeetingPointLocation:(CLLocationCoordinate2D)pointCoordinate;
 
 

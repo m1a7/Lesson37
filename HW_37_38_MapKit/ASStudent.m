@@ -16,7 +16,6 @@
 #define ARC4RANDOM_MAX      0x100000000
 
 
-//-(instancetype) initWithName:(NSString*)name andFamaly:(NSString*)famaly andUserLocation:(CLLocation *)newLocation{
 -(instancetype) initWithName:(NSString*)name andFamaly:(NSString*)famaly andMeetingPointLocation:(CLLocationCoordinate2D)pointCoordinate{
 
   self = [super init];
@@ -58,8 +57,8 @@
         // Координаты студентов
         CLLocationCoordinate2D coordinateStudent2d;
         
-        double latitudeStudent   =   latitudeUser  + [self randomFloatBetween:-0.08 andLargerFloat:0.05];
-        double longitudeStudent  =   longitudeUser + [self randomFloatBetween:-0.08 andLargerFloat:0.05];
+        double latitudeStudent   =   latitudeUser  + [self randomFloatBetween:-0.015 andLargerFloat:0.015];
+        double longitudeStudent  =   longitudeUser + [self randomFloatBetween:-0.015 andLargerFloat:0.015];
         
         coordinateStudent2d.latitude  = latitudeStudent;
         coordinateStudent2d.longitude = longitudeStudent;
@@ -68,13 +67,7 @@
         self.coordinate = coordinateStudent2d;
         self.title    = [NSString stringWithFormat:@"%@ %@",name,famaly];
         self.subtitle = [NSString stringWithFormat:@"%@",stringOfBirth];
-        
-        
-        
-        
-        
-        
-        
+
         
         NSLog(@" latitudeStudent = %f   longitudeStudent = %f",latitudeStudent,longitudeStudent);
         //NSLog(@"\tName = %@     \tFamaly = %@     \tDate = %@  |",name,  famaly, string);

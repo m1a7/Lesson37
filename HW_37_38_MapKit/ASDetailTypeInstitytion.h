@@ -13,9 +13,8 @@
 @protocol ASDetailTypeInstitytionDelegate <NSObject>
 
 @required
-//- (void)dataFromDateDetailTypeController:(NSString *)data;
+
 -(void)dataFromDateDetailTypeController:(NSString*) nameBuild imageNamed:(NSString*) nameImage;
-//-(void)passDataBack:(NSString*) nameBuild imageNamed:(NSString*) nameImage;
 
 @end
 
@@ -30,7 +29,6 @@
 
 @property (nonatomic, assign) BOOL wasSelect;
 @property (nonatomic, weak) id <ASDetailTypeInstitytionDelegate> delegate;
-//@property (nonatomic, strong) id  <ASDetailTypeInstitytionDelegate> delegate;
 
 
 @end
